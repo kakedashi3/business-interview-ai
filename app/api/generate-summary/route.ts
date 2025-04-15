@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     // Generate summary using OpenAI
     const { text } = await generateText({
-      model: openai("gpt-4.1"), // Using a more reliable model
+      model: openai("gpt-4o"), // Using a more reliable model
       prompt: `${summaryPrompt}\n\n${conversationForSummary}`,
       temperature: 0.7,
       maxTokens: 1000,

@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     // For the first question, use a simpler prompt
     if (isFirstQuestion) {
       const { text } = await generateText({
-        model: openai("gpt-4.1"), // Using a more reliable model
+        model: openai("gpt-4o"), // Using a more reliable model
         prompt:
           "あなたは業務ナレッジを収集するインタビュアーです。インタビューの最初の質問として、相手の業種・業界や担当業務について尋ねてください。質問は1つだけ、簡潔に作成してください。",
         temperature: 0.7,
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
     // Generate question using OpenAI
     const { text } = await generateText({
-      model: openai("gpt-4.1"), // Using a more reliable model
+      model: openai("gpt-4o"), // Using a more reliable model
       messages: formattedMessages,
       temperature: 0.7,
     })
