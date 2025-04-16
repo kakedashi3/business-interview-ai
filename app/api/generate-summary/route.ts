@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       model: openai("gpt-4o"), // Using a more reliable model
       prompt: `${summaryPrompt}\n\n${conversationForSummary}`,
       temperature: 0.7,
-      maxTokens: 1000,
+      maxTokens: 500,
     })
 
     return Response.json({ summary: text })
