@@ -1,5 +1,11 @@
 # 業務ナレッジ収集インタビューAI
 
+## デモ
+
+![デモ画面](/demo.png "業務ナレッジ収集インタビューAIのデモ画面")
+
+*デモ画面: インタビューAIとの対話例*
+
 ## 概要
 
 このプロジェクトは、業務ナレッジの属人化を防ぐための「インタビューAI」Webアプリです。  
@@ -22,6 +28,11 @@ AIがユーザーに業務経験や判断基準、工夫などを自然な会話
 - Radix UI
 - OpenAI API など
 
+## 動作要件
+
+- Node.js 18.0.0以上
+- pnpm または npm
+
 ## セットアップ方法
 
 1. リポジトリをクローン
@@ -42,15 +53,41 @@ AIがユーザーに業務経験や判断基準、工夫などを自然な会話
     ```bash
     cp .env.sample .env.local
     ```
+     **OpenAI APIキーの取得方法**
+   1. [OpenAI公式サイト](https://platform.openai.com/) にアクセスし、アカウントを作成またはログインします。
+   2. ユーザーアイコンから「API Keys」ページに移動します。
+   3. 「Create new secret key」ボタンを押してAPIキーを発行します。
+   4. 発行されたAPIキーを `.env.local` の該当箇所（例: `OPENAI_API_KEY=...`）に貼り付けてください。
 
-4. 開発サーバーの起動
+   > ⚠️ APIキーは公開しないように注意してください。
+    
+
+4. MITライセンスファイルの追加（必要に応じて）
+    ```bash
+    curl -o LICENSE https://raw.githubusercontent.com/licenses/license-templates/master/templates/mit.txt
+    ```
+
+5. 開発サーバーの起動
     ```bash
     pnpm dev
     # または
     npm run dev
     ```
 
-5. ブラウザで `http://localhost:3000` にアクセス
+6. ブラウザで `http://localhost:3000` にアクセス
+
+## 環境変数の設定
+
+`.env.local` に以下の環境変数を設定してください：
+
+```env
+# OpenAI API設定
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-4-turbo-preview  # または gpt-3.5-turbo など
+
+# その他の設定（必要に応じて）
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
 ## ライセンス
 
