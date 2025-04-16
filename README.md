@@ -49,17 +49,31 @@ AIがユーザーに業務経験や判断基準、工夫などを自然な会話
     ```
 
 3. 環境変数の設定  
-   `.env.sample` をコピーして `.env.local` を作成し、必要なAPIキー等を設定してください。
+   `.env.example` をコピーして `.env.local` を作成し、必要なAPIキー等を設定してください。
     ```bash
-    cp .env.sample .env.local
+    cp .env.example .env.local
     ```
-     **OpenAI APIキーの取得方法**
-   1. [OpenAI公式サイト](https://platform.openai.com/) にアクセスし、アカウントを作成またはログインします。
-   2. ユーザーアイコンから「API Keys」ページに移動します。
-   3. 「Create new secret key」ボタンを押してAPIキーを発行します。
-   4. 発行されたAPIキーを `.env.local` の該当箇所（例: `OPENAI_API_KEY=...`）に貼り付けてください。
+    **環境変数の設定例**
+    ```env
+    # OpenAI API設定
+    OPENAI_API_KEY=your_api_key_here
 
-   > ⚠️ APIキーは公開しないように注意してください。
+    # その他の設定（必要に応じて）
+    NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+    **OpenAI APIキーの取得方法**
+    1. [OpenAI公式サイト](https://platform.openai.com/) にアクセスし、アカウントを作成またはログインします。
+    2. ユーザーアイコンから「API Keys」ページに移動します。
+    3. 「Create new secret key」ボタンを押してAPIキーを発行します。
+    4. 発行されたAPIキーを `.env.local` の該当箇所（例: `OPENAI_API_KEY=...`）に貼り付けてください。
+
+    > ⚠️ **重要な注意事項**
+    > - APIキーは公開しないように注意してください
+    > - OpenAI APIは従量課金制です
+    > - APIキーを設定すると、利用量に応じて料金が発生します
+    > - 無料利用枠（5ドル相当）を超えると、クレジットカードに請求が発生します
+    > - 料金は使用するモデルと利用量によって異なります
+    > - 詳細は[OpenAIの料金ページ](https://openai.com/pricing)をご確認ください
     
 
 4. MITライセンスファイルの追加（必要に応じて）
@@ -83,7 +97,6 @@ AIがユーザーに業務経験や判断基準、工夫などを自然な会話
 ```env
 # OpenAI API設定
 OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-4-turbo-preview  # または gpt-3.5-turbo など
 
 # その他の設定（必要に応じて）
 NEXT_PUBLIC_APP_URL=http://localhost:3000
